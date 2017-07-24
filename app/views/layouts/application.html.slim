@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title Saber
+    = stylesheet_link_tag    'application', :media => 'all', 'data-turbolinks-track' => true
+    = yield :head
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    .brand Mock Company Website
+    .address-bar XV de Novembro, 1729 | Itararé, SP - 18460-000 | +55 (15) 0000-0000
+    == render 'layouts/navigation'
+    .container
+      .row
+        == render 'layouts/messages'
+      .row
+        = yield
+    == render 'layouts/footer'
